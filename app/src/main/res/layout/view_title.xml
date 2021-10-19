@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/captionBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/captionH"
+        android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/imgCar"
+        android:layout_width="@dimen/carW"
+        android:layout_height="@dimen/carH"
+        android:layout_margin="@dimen/std_margin"
+        android:src="@drawable/car"
+        android:tint="@color/colorPrimary"
+        android:contentDescription="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="@dimen/titleW"
+        android:layout_height="@dimen/titleH"
+        android:layout_toEndOf="@+id/imgCar"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/std_margin"
+        android:textAlignment="center"
+        android:text="@string/titleOffers"
+        android:textColor="@color/colorPrimary"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtOffers"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleH"
+        android:layout_below="@+id/captionBar"
+        android:layout_alignParentStart="true"
+        android:layout_margin="@dimen/std_margin"
+        android:textAlignment="viewStart"
+        android:text="@string/captionOffers"
+        android:textColor="@color/colorPrimary"
+        android:background="@android:color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+
+</RelativeLayout>

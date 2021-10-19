@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="std_margin">10dp</dimen>
+    <!-- Offers screen -->
+    <dimen name="captionW">300dp</dimen>
+    <dimen name="captionH">100dp</dimen>
+
+    <dimen name="carW">100dp</dimen>
+    <dimen name="carH">100dp</dimen>
+
+    <dimen name="titleW">300dp</dimen>
+    <dimen name="titleH">50dp</dimen>
+
+    <dimen name="titleTextSize">75sp</dimen>
+
+    <!-- Home screen -->
+    <dimen name="cardW">150dp</dimen>
+    <dimen name="cardH">150dp</dimen>
+
+    <dimen name="iconW">120dp</dimen>
+    <dimen name="iconH">120dp</dimen>
+
+    <dimen name="labelW">80dp</dimen>
+    <dimen name="labelH">50dp</dimen>
+
+    <dimen name="gridW">400dp</dimen>
+    <dimen name="gridH">400dp</dimen>
+
+</resources>

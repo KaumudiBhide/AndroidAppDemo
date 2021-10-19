@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/bacground">
+
+    <GridView
+        android:id="@+id/gridCards"
+        android:layout_width="@dimen/gridW"
+        android:layout_height="@dimen/gridH"
+        android:layout_margin="@dimen/std_margin"
+        android:layout_alignParentBottom="true"
+        android:numColumns="2"/>
+
+</RelativeLayout>

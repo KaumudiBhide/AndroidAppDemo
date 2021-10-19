@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">InfyCabs</string>
+
+    <!-- Offers screen -->
+    <string name="titleOffers">INFYCABS</string>
+    <string name="captionOffers">Avail offers</string>
+    <!--
+    <string name="firstride">Up to 50% Cash-Back On First Ride</string>
+    <string name="freeride">Lucky Free Ride</string>
+    <string name="discount">Long Distance Discount</string>
+    <string name="cashback">Get Rs.50 cash-back</string> -->
+
+    <array name="offers">
+        <item>Up to 50% Cash-Back On First Ride</item>
+        <item>Lucky Free Ride</item>
+        <item>Long Distance Discount</item>
+        <item>Get Rs.50 cash-back</item>
+    </array>
+
+    <string name="titleHome">Home</string>
+
+    <string name="titleProfile">Profile</string>
+    <string name="titleRide">Ride</string>
+    <string name="titleHistory">History</string>
+
+</resources>
