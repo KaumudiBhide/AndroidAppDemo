@@ -1,22 +1,30 @@
 package lexcourse.android.infycabs;
 
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-    implements GridView.OnItemClickListener {
+    implements GridView.OnItemClickListener,
+    View.OnClickListener {
 
     public static final String LOG_TAG = "InfyCabs";
 
@@ -26,6 +34,11 @@ public class MainActivity extends AppCompatActivity
             = { R.drawable.ic_profile, R.drawable.ic_ride,
                 R.drawable.ic_history, R.drawable.ic_offers };
 
+    public static boolean isUserLoggedIn = false;
+
+    private View dialogLayout;
+    private AlertDialog alert;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +46,23 @@ public class MainActivity extends AppCompatActivity
         setTitle(R.string.titleHome);
 
         populateGridView();
+
+        if(!isUserLoggedIn)
+            showAlertDialog();
+
+        TextView txtRegister = findViewById(R.id.txtRegister);
+        //txtRegister.setOnClickListener(this::onRegister);
+    }
+
+    private void showAlertDialog() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+        dialogLayout = getLayoutInflater().inflate(R.layout.view_login, null);
+        alertDialog.setView(dialogLayout);
+        Button btnLogin = dialogLayout.findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(this);
+        alert = alertDialog.create();
+        alert.setCanceledOnTouchOutside(false);
+        alert.show();
     }
 
     private void populateGridView() {
@@ -98,6 +128,21 @@ public class MainActivity extends AppCompatActivity
         Log.d(LOG_TAG, label);
 
         Intent intent = new Intent(this, activityClass);
+        startActivity(intent);
+    }
+
+    public void onClick(View view) {
+        // send data from the AlertDialog to the Activity
+        EditText editUserName = dialogLayout.findViewById(R.id.editUserName);
+        EditText editPassword = dialogLayout.findViewById(R.id.editPassword);
+        String strCredentials = "User " + editUserName.getText().toString() + " logged in";
+        Toast.makeText(MainActivity.this, strCredentials,Toast.LENGTH_LONG).show();
+        isUserLoggedIn = true;
+        alert.cancel();
+    }
+
+    private void onRegister(View view) {
+        Intent intent = new Intent(this, OffersActivity.class);
         startActivity(intent);
     }
 }

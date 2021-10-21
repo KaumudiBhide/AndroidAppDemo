@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/bacground">
+    android:background="@drawable/bg_home_full_with_logo5">
 
     <GridView
         android:id="@+id/gridCards"
         android:layout_width="@dimen/gridW"
         android:layout_height="@dimen/gridH"
         android:layout_margin="@dimen/std_margin"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:numColumns="2"/>
 

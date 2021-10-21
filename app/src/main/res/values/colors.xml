@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#7fb9fb</color>
-    <color name="colorPrimaryDark">#204762</color>
-    <color name="colorAccent">#a3d3ff</color>
+    <color name="colorPrimary">#4898EB</color>
+    <color name="colorPrimaryDark">#265684</color>
+    <color name="colorAccent">#6CA8C0</color>
+
+    <!-- On surface colors -->
+    <color name="colorOnSurface">#FFFFFF</color>
 </resources>
