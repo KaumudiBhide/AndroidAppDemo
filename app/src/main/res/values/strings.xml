@@ -22,9 +22,10 @@
     <string name="titleProfile">Profile</string>
     <string name="titleRide">Ride</string>
     <string name="titleHistory">History</string>
-    <string name="user_name">User name</string>
+    <string name="user_name">User Name</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="infycabs_register">New to InfyCabs? Register here</string>
+    <string name="open_modal_bottom_sheet">Open Modal Bottom Sheet</string>
 
 </resources>

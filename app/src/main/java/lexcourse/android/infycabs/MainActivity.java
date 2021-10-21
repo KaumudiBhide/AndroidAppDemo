@@ -1,24 +1,19 @@
 package lexcourse.android.infycabs;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 
@@ -34,8 +29,6 @@ public class MainActivity extends AppCompatActivity
             = { R.drawable.ic_profile, R.drawable.ic_ride,
                 R.drawable.ic_history, R.drawable.ic_offers };
 
-    public static boolean isUserLoggedIn = false;
-
     private View dialogLayout;
     private AlertDialog alert;
 
@@ -47,8 +40,14 @@ public class MainActivity extends AppCompatActivity
 
         populateGridView();
 
-        if(!isUserLoggedIn)
-            showAlertDialog();
+        if(!Globals.isUserLoggedIn) {
+            BottomSheetDialog bottomSheet = new BottomSheetDialog();
+            bottomSheet.show(getSupportFragmentManager(),
+                    "ModalBottomSheet");
+        }
+
+        //if(!isUserLoggedIn)
+        //    showAlertDialog();
 
         TextView txtRegister = findViewById(R.id.txtRegister);
         //txtRegister.setOnClickListener(this::onRegister);
@@ -132,12 +131,16 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onClick(View view) {
-        // send data from the AlertDialog to the Activity
-        EditText editUserName = dialogLayout.findViewById(R.id.editUserName);
-        EditText editPassword = dialogLayout.findViewById(R.id.editPassword);
-        String strCredentials = "User " + editUserName.getText().toString() + " logged in";
+        // retrieve entered credentials
+        TextInputLayout editUserName = dialogLayout.findViewById(R.id.editUserName);
+        TextInputLayout editPassword = dialogLayout.findViewById(R.id.editPassword);
+
+        // show user logged in
+        String strUser = editUserName.getEditText().getText().toString();
+        String strCredentials = "User " + strUser + " logged in";
         Toast.makeText(MainActivity.this, strCredentials,Toast.LENGTH_LONG).show();
-        isUserLoggedIn = true;
+
+        Globals.isUserLoggedIn = true;
         alert.cancel();
     }
 
