@@ -6,4 +6,11 @@
 
     <!-- On surface colors -->
     <color name="colorOnSurface">#FFFFFF</color>
+
+    <!-- light text color -->
+    <color name="colorTitle">#7A9EC7</color>
+
+    <!-- divider color -->
+    <color name="colorDivider">#ECECEC</color>
+    <color name="colorBorder">#A8A8A9</color>
 </resources>

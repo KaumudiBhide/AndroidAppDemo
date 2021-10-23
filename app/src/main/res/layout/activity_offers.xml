@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OffersActivity"
-    android:background="@drawable/bacground">
+    android:background="@drawable/bg_home_full_with_logo5">
 
     <include
         android:id="@+id/layoutCaption"
         layout="@layout/view_title"
+        android:layout_marginTop="@dimen/title_height"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -17,7 +18,8 @@
     <ListView
         android:id="@+id/listOffers"
         android:entries="@array/offers"
-        android:layout_margin="@dimen/std_margin"
+        android:layout_marginHorizontal="@dimen/md_margin"
+        android:layout_marginVertical="@dimen/std_margin"
         android:layout_below="@+id/layoutCaption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

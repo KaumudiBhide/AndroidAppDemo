@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class BottomSheetDialog extends BottomSheetDialogFragment {
+public class LoginBottomSheet extends BottomSheetDialogFragment {
 
     TextInputLayout editUserName, editPassword;
     View bottomSheetView;

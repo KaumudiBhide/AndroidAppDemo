@@ -5,21 +5,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.textfield.TextInputLayout;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-    implements GridView.OnItemClickListener,
-    View.OnClickListener {
+    implements GridView.OnItemClickListener {
 
     public static final String LOG_TAG = "InfyCabs";
 
@@ -41,27 +36,10 @@ public class MainActivity extends AppCompatActivity
         populateGridView();
 
         if(!Globals.isUserLoggedIn) {
-            BottomSheetDialog bottomSheet = new BottomSheetDialog();
+            LoginBottomSheet bottomSheet = new LoginBottomSheet();
             bottomSheet.show(getSupportFragmentManager(),
                     "ModalBottomSheet");
         }
-
-        //if(!isUserLoggedIn)
-        //    showAlertDialog();
-
-        TextView txtRegister = findViewById(R.id.txtRegister);
-        //txtRegister.setOnClickListener(this::onRegister);
-    }
-
-    private void showAlertDialog() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-        dialogLayout = getLayoutInflater().inflate(R.layout.view_login, null);
-        alertDialog.setView(dialogLayout);
-        Button btnLogin = dialogLayout.findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(this);
-        alert = alertDialog.create();
-        alert.setCanceledOnTouchOutside(false);
-        alert.show();
     }
 
     private void populateGridView() {
@@ -122,30 +100,16 @@ public class MainActivity extends AppCompatActivity
         else if(label.equals(LABELS[3]))
         {
             activityClass = OffersActivity.class;
+            /*OffersBottomSheet bottomSheet = new OffersBottomSheet();
+            bottomSheet.show(getSupportFragmentManager(),
+                    "ModalBottomSheet");*/
         }
 
         Log.d(LOG_TAG, label);
 
-        Intent intent = new Intent(this, activityClass);
-        startActivity(intent);
-    }
-
-    public void onClick(View view) {
-        // retrieve entered credentials
-        TextInputLayout editUserName = dialogLayout.findViewById(R.id.editUserName);
-        TextInputLayout editPassword = dialogLayout.findViewById(R.id.editPassword);
-
-        // show user logged in
-        String strUser = editUserName.getEditText().getText().toString();
-        String strCredentials = "User " + strUser + " logged in";
-        Toast.makeText(MainActivity.this, strCredentials,Toast.LENGTH_LONG).show();
-
-        Globals.isUserLoggedIn = true;
-        alert.cancel();
-    }
-
-    private void onRegister(View view) {
-        Intent intent = new Intent(this, OffersActivity.class);
-        startActivity(intent);
+        if(activityClass!=null) {
+            Intent intent = new Intent(this, activityClass);
+            startActivity(intent);
+        }
     }
 }

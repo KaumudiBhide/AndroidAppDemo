@@ -9,11 +9,14 @@
 
     <GridView
         android:id="@+id/gridCards"
-        android:layout_width="@dimen/gridW"
-        android:layout_height="@dimen/gridH"
-        android:layout_margin="@dimen/std_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/vlg_margin"
+        android:layout_marginStart="@dimen/md_margin"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:numColumns="2"/>
+        android:numColumns="2"
+        android:horizontalSpacing="@dimen/md_margin"
+        android:verticalSpacing="@dimen/md_margin"/>
 
 </RelativeLayout>

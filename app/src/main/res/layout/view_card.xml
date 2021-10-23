@@ -1,48 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- A CardView that contains a TextView -->
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_width="200dp"
-    android:layout_height="200dp">
-
-<androidx.cardview.widget.CardView
-
-    android:id="@+id/card_view"
-    android:layout_gravity="center"
-    android:layout_width="@dimen/cardW"
-    android:layout_height="@dimen/cardH"
-    card_view:cardCornerRadius="25dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_margin="@dimen/std_margin"
-    android:background="@drawable/bacground">
+    android:orientation="horizontal">
 
-    <RelativeLayout
-        android:id="@+id/cardLayout"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/cardW"
+        android:layout_height="@dimen/cardH"
+        android:layout_margin="@dimen/std_margin"
+        app:cardElevation="@dimen/title_elevation"
+        app:cardCornerRadius="@dimen/cardRad"
+        app:strokeColor="@color/colorBorder"
+        app:strokeWidth="@dimen/std_border">
 
-        <ImageView
-            android:id="@+id/cardIcon"
-            android:layout_centerHorizontal="true"
-            android:layout_width="@dimen/iconW"
-            android:layout_height="@dimen/iconH"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_offers"
-            android:tint="@color/colorPrimary"/>
+        <RelativeLayout
+            android:id="@+id/cardLayout"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/cardLabel"
-            android:layout_below="@+id/cardIcon"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/labelH"
-            android:text="@string/app_name"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+            <ImageView
+                android:id="@+id/cardIcon"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_width="@dimen/iconW"
+                android:layout_height="@dimen/iconH"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_offers"
+                app:tint="@color/colorPrimary" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/cardLabel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/labelH"
+                android:layout_alignParentBottom="true"
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
-</androidx.cardview.widget.CardView>
+        </RelativeLayout>
 
-</RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
