@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Small margin -->
+    <dimen name="sm_margin">5dp</dimen>
     <!-- Standard margin -->
     <dimen name="std_margin">10dp</dimen>
     <!-- Medium margin -->
@@ -41,5 +43,8 @@
 
     <!-- Standard border -->
     <dimen name="std_border">1dp</dimen>
+
+    <!-- Standard button height -->
+    <dimen name="appBtnH">65dp</dimen>
 
 </resources>

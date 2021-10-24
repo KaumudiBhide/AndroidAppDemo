@@ -38,18 +38,20 @@
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/appBtnH"
         android:layout_margin="@dimen/std_margin"
         android:text="@string/login"
         style="@style/Widget.MaterialComponents.Button" />
 
     <TextView
-        android:id="@+id/txtRegister"
+        android:id="@+id/txtRegisterLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/std_margin"
+        android:layout_marginHorizontal="@dimen/std_margin"
+        android:layout_marginBottom="@dimen/lg_margin"
         android:text="@string/infycabs_register"
         android:textColor="@color/colorAccent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_gravity="end" />
 
 </LinearLayout>

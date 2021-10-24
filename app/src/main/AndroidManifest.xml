@@ -41,6 +41,12 @@
                 android:value="lexcourse.android.infycabs.MainActivity" />
         </activity>
 
+        <activity android:name=".RegisterActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="lexcourse.android.infycabs.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>

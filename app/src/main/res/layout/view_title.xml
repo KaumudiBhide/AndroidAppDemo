@@ -18,7 +18,7 @@
         app:cardElevation="@dimen/title_elevation">
 
         <TextView
-            android:id="@+id/txtOffers"
+            android:id="@+id/txtTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/std_margin"

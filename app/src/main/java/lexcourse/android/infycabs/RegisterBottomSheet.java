@@ -5,18 +5,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class RegisterBottomSheet extends BottomSheetDialogFragment {
 
-    TextInputLayout editUserName, editPassword;
     View bottomSheetView;
+    LinearLayout layoutTitle;
+    TextView txtTitle;
 
     @Nullable
     @Override
@@ -24,29 +26,27 @@ public class RegisterBottomSheet extends BottomSheetDialogFragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        bottomSheetView = inflater.inflate(R.layout.view_login,
+        bottomSheetView = inflater.inflate(R.layout.view_register,
                 container, false);
 
-        Button btnLogin = bottomSheetView.findViewById(R.id.btnLogin);
+        Button btnRegister = bottomSheetView.findViewById(R.id.btnRegister);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                // retrieve entered credentials
-                editUserName = bottomSheetView.findViewById(R.id.editUserName);
-                editPassword = bottomSheetView.findViewById(R.id.editPassword);
-
-                String strUser = editUserName.getEditText().getText().toString();
-                String strCredentials = "User " + strUser + " logged in";
-                // show user logged in
-                Toast.makeText(getActivity(), strCredentials,Toast.LENGTH_LONG).show();
-
-                Globals.isUserLoggedIn = true;
+                String strMessage = "New user registered successfully!";
+                // show user registered
+                Toast.makeText(getActivity(), strMessage,Toast.LENGTH_LONG).show();
                 dismiss();
             }
         });
 
+        layoutTitle = bottomSheetView.findViewById(R.id.layoutTitle);
+        txtTitle = layoutTitle.findViewById(R.id.txtTitle);
+        txtTitle.setText(R.string.register);
+
         return bottomSheetView;
     }
+
 }

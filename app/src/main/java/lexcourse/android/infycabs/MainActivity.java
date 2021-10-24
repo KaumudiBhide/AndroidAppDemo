@@ -14,7 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-    implements GridView.OnItemClickListener {
+    implements GridView.OnItemClickListener,
+    View.OnClickListener,
+        OnNewUserListener {
 
     public static final String LOG_TAG = "InfyCabs";
 
@@ -23,6 +25,10 @@ public class MainActivity extends AppCompatActivity
     public static final int[] ICONS
             = { R.drawable.ic_profile, R.drawable.ic_ride,
                 R.drawable.ic_history, R.drawable.ic_offers };
+
+    public static final Class[] CLASS
+            = new Class[]{ProfileActivity.class, RideActivity.class,
+            HistoryActivity.class, OffersActivity.class};
 
     private View dialogLayout;
     private AlertDialog alert;
@@ -37,6 +43,7 @@ public class MainActivity extends AppCompatActivity
 
         if(!Globals.isUserLoggedIn) {
             LoginBottomSheet bottomSheet = new LoginBottomSheet();
+            bottomSheet.setOnNewUserListener(this);
             bottomSheet.show(getSupportFragmentManager(),
                     "ModalBottomSheet");
         }
@@ -53,25 +60,12 @@ public class MainActivity extends AppCompatActivity
     private ArrayList<Card> getCards() {
         ArrayList<Card> cards = new ArrayList<Card>();
 
-        Card card = new Card();
-        card.setLabel(LABELS[0]);
-        card.setIcon(ICONS[0]);
-        cards.add(card);
-
-        card = new Card();
-        card.setLabel(LABELS[1]);
-        card.setIcon(ICONS[1]);
-        cards.add(card);
-
-        card = new Card();
-        card.setLabel(LABELS[2]);
-        card.setIcon(ICONS[2]);
-        cards.add(card);
-
-        card = new Card();
-        card.setLabel(LABELS[3]);
-        card.setIcon(ICONS[3]);
-        cards.add(card);
+        for(int i=0; i<LABELS.length; i++) {
+            Card card = new Card();
+            card.setLabel(LABELS[i]);
+            card.setIcon(ICONS[i]);
+            cards.add(card);
+        }
 
         return cards;
     }
@@ -85,31 +79,36 @@ public class MainActivity extends AppCompatActivity
 
         Class activityClass = null;
 
-        if(label.equals(LABELS[0]))
-        {
-            activityClass = ProfileActivity.class;
+        for(int i=0; i<LABELS.length; i++) {
+            if(label.equals(LABELS[i]))
+                activityClass = CLASS[i];
         }
-        else if(label.equals(LABELS[1]))
-        {
-            activityClass = RideActivity.class;
-        }
-        else if(label.equals(LABELS[2]))
-        {
-            activityClass = HistoryActivity.class;
-        }
-        else if(label.equals(LABELS[3]))
-        {
-            activityClass = OffersActivity.class;
-            /*OffersBottomSheet bottomSheet = new OffersBottomSheet();
-            bottomSheet.show(getSupportFragmentManager(),
-                    "ModalBottomSheet");*/
-        }
-
-        Log.d(LOG_TAG, label);
 
         if(activityClass!=null) {
+            Log.d(LOG_TAG, label);
             Intent intent = new Intent(this, activityClass);
             startActivity(intent);
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view.getId() == R.id.txtRegisterLink) {
+            Log.d(LOG_TAG, "Register new user");
+            Globals.isNewUser = true;
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onNewUser(NewUserEvent e) {
+        Log.d(LOG_TAG, "New user wants to register");
+        Globals.isNewUser = true;
+        /*Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);*/
+        RegisterBottomSheet bottomSheet = new RegisterBottomSheet();
+        bottomSheet.show(getSupportFragmentManager(),
+                "ModalBottomSheet");
     }
 }

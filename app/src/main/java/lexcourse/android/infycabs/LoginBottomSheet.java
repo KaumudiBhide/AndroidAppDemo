@@ -1,11 +1,11 @@
 package lexcourse.android.infycabs;
 
-import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,7 +17,9 @@ import com.google.android.material.textfield.TextInputLayout;
 public class LoginBottomSheet extends BottomSheetDialogFragment {
 
     TextInputLayout editUserName, editPassword;
+    TextView txtRegisterLink;
     View bottomSheetView;
+    OnNewUserListener listener = null;
 
     @Nullable
     @Override
@@ -27,6 +29,18 @@ public class LoginBottomSheet extends BottomSheetDialogFragment {
 
         bottomSheetView = inflater.inflate(R.layout.view_login,
                 container, false);
+
+        txtRegisterLink = bottomSheetView.findViewById(R.id.txtRegisterLink);
+        txtRegisterLink.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Globals.isNewUser = true;
+                        dismiss();
+                        listener.onNewUser(new NewUserEvent(this));
+                    }
+                }
+        );
 
         Button btnLogin = bottomSheetView.findViewById(R.id.btnLogin);
 
@@ -49,5 +63,9 @@ public class LoginBottomSheet extends BottomSheetDialogFragment {
         });
 
         return bottomSheetView;
+    }
+
+    public void setOnNewUserListener(OnNewUserListener listener) {
+        this.listener = listener;
     }
 }
