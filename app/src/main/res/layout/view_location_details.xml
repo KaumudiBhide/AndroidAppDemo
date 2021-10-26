@@ -13,14 +13,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/md_margin"
+        app:dividerThickness="@dimen/md_margin"
+        app:dividerColor="@android:color/white"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@android:color/white">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/md_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="@string/select_city" />
+
+            <Spinner
+                android:id="@+id/spinCities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/vlg_margin"
+                android:entries="@array/cities"
+                android:prompt="@string/app_name" />
+
+        </LinearLayout>
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editEnterName"
+            android:id="@+id/editRide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/sm_margin"
@@ -29,13 +60,17 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_user_name"
+                android:hint="@string/your_ride"
+                android:textColorHint="@color/colorInactive"
+                android:text="@string/ride_type"
+                android:enabled="false"
+                android:textColor="@color/colorInactive"
                 android:inputType="textPersonName" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editContactNumber"
+            android:id="@+id/editRate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/sm_margin"
@@ -44,13 +79,17 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/contact_number"
+                android:hint="@string/rate"
+                android:textColorHint="@color/colorInactive"
+                android:text="@string/rate_type"
+                android:enabled="false"
+                android:textColor="@color/colorInactive"
                 android:inputType="textPersonName" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editEmail"
+            android:id="@+id/editPickUpLoc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/sm_margin"
@@ -59,13 +98,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_email"
-                android:inputType="textPassword" />
+                android:hint="@string/enter_pick_up_location"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editEnterAddress"
+            android:id="@+id/editDropLoc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/sm_margin"
@@ -74,7 +113,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/address"
+                android:hint="@string/enter_drop_location"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -84,23 +123,23 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btnSave"
+                android:id="@+id/btnConfirm"
                 android:layout_width="@dimen/appBtnW"
                 android:layout_height="@dimen/appBtnH"
                 android:layout_alignParentEnd="true"
                 android:layout_marginHorizontal="@dimen/sm_margin"
                 android:layout_marginBottom="@dimen/md_margin"
-                android:text="@string/save"
+                android:text="@string/confirm"
                 style="@style/Widget.MaterialComponents.Button" />
 
             <Button
-                android:id="@+id/btnHome"
+                android:id="@+id/btnCancel"
                 android:layout_width="@dimen/appBtnW"
                 android:layout_height="@dimen/appBtnH"
-                android:layout_toStartOf="@+id/btnSave"
+                android:layout_toStartOf="@+id/btnConfirm"
                 android:layout_marginHorizontal="@dimen/sm_margin"
                 android:layout_marginBottom="@dimen/md_margin"
-                android:text="@string/home"
+                android:text="@string/cancel"
                 style="@style/Widget.MaterialComponents.Button" />
 
         </RelativeLayout>

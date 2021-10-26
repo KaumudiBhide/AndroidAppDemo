@@ -30,4 +30,10 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dividerThickness="@dimen/title_elevation"
+        app:dividerColor="@color/colorDivider"/>
+
 </LinearLayout>

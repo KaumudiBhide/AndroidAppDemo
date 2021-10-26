@@ -38,4 +38,29 @@
     <string name="contact_number">Contact Number*</string>
     <string name="register">REGISTER</string>
 
+    <!-- Profile sheet labels -->
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="home">HOME</string>
+    <string name="save">SAVE</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="enter_drop_location">Enter Drop Location</string>
+    <string name="enter_pick_up_location">Enter Pick-Up Location</string>
+    <string name="rate">Rate</string>
+    <string name="your_ride">Your Ride</string>
+    <string name="ride_type">Sedan AC</string>
+    <string name="rate_type">Rs 10 per KM</string>
+    <string name="select_city">Select City</string>
+
+    <!-- Cities -->
+    <string-array name="cities">
+        <item>Bangalore</item>
+        <item>Pune</item>
+        <item>Delhi</item>
+        <item>Chennai</item>
+    </string-array>
+
 </resources>

@@ -13,4 +13,6 @@
     <!-- divider color -->
     <color name="colorDivider">#ECECEC</color>
     <color name="colorBorder">#A8A8A9</color>
+    <color name="colorInactive">#AEADAD</color>
+
 </resources>

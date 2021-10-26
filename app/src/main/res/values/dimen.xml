@@ -44,7 +44,8 @@
     <!-- Standard border -->
     <dimen name="std_border">1dp</dimen>
 
-    <!-- Standard button height -->
+    <!-- Standard button dimens -->
+    <dimen name="appBtnW">110dp</dimen>
     <dimen name="appBtnH">65dp</dimen>
 
 </resources>
