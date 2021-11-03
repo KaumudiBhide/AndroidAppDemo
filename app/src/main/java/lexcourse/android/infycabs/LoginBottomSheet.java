@@ -37,7 +37,8 @@ public class LoginBottomSheet extends BottomSheetDialogFragment {
                     public void onClick(View view) {
                         Globals.isNewUser = true;
                         dismiss();
-                        listener.onNewUser(new NewUserEvent(this));
+                        if(listener!=null)
+                            listener.onNewUser(new NewUserEvent(this));
                     }
                 }
         );

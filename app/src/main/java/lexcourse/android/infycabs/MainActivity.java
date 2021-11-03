@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity
     View.OnClickListener,
         OnNewUserListener {
 
-    public static final String LOG_TAG = "InfyCabs";
-
     public static final String[] LABELS = { "Profile", "Ride",
                                             "History", "Offers" };
     public static final int[] ICONS
@@ -85,7 +83,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         if(activityClass!=null) {
-            Log.d(LOG_TAG, label);
+            Log.d(Globals.LOG_TAG, label);
             Intent intent = new Intent(this, activityClass);
             startActivity(intent);
         }
@@ -94,7 +92,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.txtRegisterLink) {
-            Log.d(LOG_TAG, "Register new user");
+            Log.d(Globals.LOG_TAG, "Register new user");
             Globals.isNewUser = true;
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
@@ -103,7 +101,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onNewUser(NewUserEvent e) {
-        Log.d(LOG_TAG, "New user wants to register");
+        Log.d(Globals.LOG_TAG, "New user wants to register");
         Globals.isNewUser = true;
         /*Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);*/
