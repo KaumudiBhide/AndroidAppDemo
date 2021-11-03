@@ -51,4 +51,8 @@
     <!-- Ride image dimens -->
     <dimen name="imgW">200dp</dimen>
     <dimen name="imgH">200dp</dimen>
+
+    <!-- Flag icon dimens -->
+    <dimen name="flagIconW">50dp</dimen>
+    <dimen name="flagIconH">50dp</dimen>
 </resources>
