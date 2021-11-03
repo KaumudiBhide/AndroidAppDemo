@@ -1,4 +1,4 @@
-package lexcourse.android.infycabs;
+package lexcourse.android.infycabs.data.models;
 
 import java.util.ArrayList;
 

@@ -5,19 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+
+import lexcourse.android.infycabs.adapters.RideCardAdapater;
+import lexcourse.android.infycabs.data.models.RideCard;
+import lexcourse.android.infycabs.events.OnRideSelectedListener;
+import lexcourse.android.infycabs.events.RideSelectedEvent;
 
 public class RideActivity extends AppCompatActivity
     implements OnRideSelectedListener {

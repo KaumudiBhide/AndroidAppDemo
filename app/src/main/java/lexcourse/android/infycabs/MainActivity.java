@@ -13,6 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+import lexcourse.android.infycabs.adapters.CardAdapater;
+import lexcourse.android.infycabs.data.models.Card;
+import lexcourse.android.infycabs.events.NewUserEvent;
+import lexcourse.android.infycabs.events.OnNewUserListener;
+
 public class MainActivity extends AppCompatActivity
     implements GridView.OnItemClickListener,
     View.OnClickListener,

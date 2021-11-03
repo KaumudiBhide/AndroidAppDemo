@@ -14,6 +14,9 @@ import androidx.annotation.Nullable;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.textfield.TextInputLayout;
 
+import lexcourse.android.infycabs.events.NewUserEvent;
+import lexcourse.android.infycabs.events.OnNewUserListener;
+
 public class LoginBottomSheet extends BottomSheetDialogFragment {
 
     TextInputLayout editUserName, editPassword;

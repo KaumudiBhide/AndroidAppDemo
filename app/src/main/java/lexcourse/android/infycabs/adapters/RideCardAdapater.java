@@ -1,7 +1,6 @@
-package lexcourse.android.infycabs;
+package lexcourse.android.infycabs.adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +8,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.material.card.MaterialCardView;
-
 import java.util.ArrayList;
+
+import lexcourse.android.infycabs.events.OnRideSelectedListener;
+import lexcourse.android.infycabs.R;
+import lexcourse.android.infycabs.data.models.RideCard;
+import lexcourse.android.infycabs.events.RideSelectedEvent;
 
 public class RideCardAdapater extends BaseAdapter
         implements View.OnClickListener {
@@ -25,7 +27,7 @@ public class RideCardAdapater extends BaseAdapter
         mRideCards = new ArrayList<RideCard>();
     }
 
-    RideCardAdapater(Context c, ArrayList<RideCard> rideCardList) {
+    public RideCardAdapater(Context c, ArrayList<RideCard> rideCardList) {
         mContext = c;
         mRideCards = rideCardList;
     }

@@ -1,4 +1,4 @@
-package lexcourse.android.infycabs;
+package lexcourse.android.infycabs.events;
 
 import java.util.EventListener;
 

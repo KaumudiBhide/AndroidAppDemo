@@ -1,4 +1,6 @@
-package lexcourse.android.infycabs;
+package lexcourse.android.infycabs.data.models;
+
+import lexcourse.android.infycabs.R;
 
 public class Card {
 

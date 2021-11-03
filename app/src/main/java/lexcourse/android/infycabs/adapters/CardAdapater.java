@@ -1,4 +1,4 @@
-package lexcourse.android.infycabs;
+package lexcourse.android.infycabs.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import lexcourse.android.infycabs.data.models.Card;
+import lexcourse.android.infycabs.R;
+
 public class CardAdapater extends BaseAdapter {
 
     private Context mContext;
@@ -20,7 +23,7 @@ public class CardAdapater extends BaseAdapter {
         mCards = new ArrayList<Card>();
     }
 
-    CardAdapater(Context c, ArrayList<Card> cardList) {
+    public CardAdapater(Context c, ArrayList<Card> cardList) {
         mContext = c;
         mCards = cardList;
     }
