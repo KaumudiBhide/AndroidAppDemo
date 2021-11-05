@@ -20,8 +20,8 @@ public class Globals {
     // country names
     public static final String[] COUNTRIES = new String[]{
             "America", "Emirates",
-            "Switzerland", "India",
-            "England"
+            "Switzerland", "India", "England",
+
     };
 
     // flag images

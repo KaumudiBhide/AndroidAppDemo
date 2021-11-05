@@ -5,13 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/md_margin"
+    android:layout_marginHorizontal="@dimen/md_margin"
+    android:layout_marginVertical="@dimen/md_margin_2"
     app:checkedIcon="@drawable/ic_check"
     app:checkedIconTint="@color/colorAccent"
     android:clickable="true"
     android:focusable="true"
     android:checkable="true"
-    app:cardElevation="@dimen/md_margin"
+    app:cardElevation="@dimen/std_elvation"
+    app:strokeWidth="@dimen/std_border"
+    app:strokeColor="@color/colorDivider"
     android:backgroundTint="@android:color/white"
     android:theme="@style/Theme.MaterialComponents.Bridge">
 

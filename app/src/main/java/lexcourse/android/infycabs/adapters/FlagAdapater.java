@@ -8,10 +8,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.squareup.picasso.Picasso;
-
-import java.util.Collections;
 import java.util.List;
 
 import lexcourse.android.infycabs.Globals;
@@ -21,8 +18,7 @@ import lexcourse.android.infycabs.ui.models.FlagCardView;
 
 public class FlagAdapater extends RecyclerView.Adapter<FlagCardView> {
 
-    List<FlagCard> list
-            = Collections.emptyList();
+    List<FlagCard> list;
     Context context;
 
     public FlagAdapater(List<FlagCard> list,
@@ -45,15 +41,12 @@ public class FlagAdapater extends RecyclerView.Adapter<FlagCardView> {
                 .inflate(R.layout.view_country_card,
                         parent, false);
 
-        FlagCardView viewHolder
-                = new FlagCardView(viewCountryCard);
-        return viewHolder;
+        return new FlagCardView(viewCountryCard);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final FlagCardView viewHolder,
                                  final int position) {
-        final int index = viewHolder.getAdapterPosition();
         viewHolder.getTxtCountry().setText(Globals.COUNTRIES[position]);
         ImageView imageView = viewHolder.getImgFlag();
         int resId = Globals.FLAGS[position];

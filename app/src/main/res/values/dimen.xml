@@ -6,10 +6,16 @@
     <dimen name="std_margin">10dp</dimen>
     <!-- Medium margin -->
     <dimen name="md_margin">20dp</dimen>
+    <!-- Medium margin -->
+    <dimen name="md_margin_2">35dp</dimen>
     <!-- Large margin -->
     <dimen name="lg_margin">50dp</dimen>
     <!-- Very large margin -->
     <dimen name="vlg_margin">75dp</dimen>
+
+    <!-- Card Elevations -->
+    <dimen name="std_elvation">20dp</dimen>
+    <dimen name="med_elvation">30dp</dimen>
 
     <!-- Offers screen -->
     <dimen name="captionW">300dp</dimen>
@@ -53,6 +59,6 @@
     <dimen name="imgH">200dp</dimen>
 
     <!-- Flag icon dimens -->
-    <dimen name="flagIconW">50dp</dimen>
-    <dimen name="flagIconH">50dp</dimen>
+    <dimen name="flagIconW">65dp</dimen>
+    <dimen name="flagIconH">65dp</dimen>
 </resources>
