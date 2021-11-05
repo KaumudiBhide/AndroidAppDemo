@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:checkedIcon="@drawable/ic_check"
+    app:checkedIconTint="@color/colorAccent"
+    android:clickable="true"
+    android:focusable="true"
+    android:checkable="true"
+    android:backgroundTint="@android:color/white"
+    android:theme="@style/Theme.MaterialComponents.Bridge">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layoutHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/std_margin">
+
+        <ImageView
+            android:id="@+id/imgRideHistory"
+            android:layout_width="@dimen/rideIconW"
+            android:layout_height="@dimen/rideIconH"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/titleProfile"
+            android:src="@drawable/ic_ride" />
+
+        <LinearLayout
+            android:id="@+id/itnDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imgRideHistory"
+            android:layout_toStartOf="@+id/txtAmount"
+            android:layout_marginHorizontal="@dimen/std_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rideDateTime"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/txtRideCRN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rideCRN"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/rideAmt"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="@android:color/black" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutSection"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/rideIconH"
+        android:layout_below="@+id/layoutHeading"
+        android:layout_marginHorizontal="@dimen/md_margin"
+        android:layout_marginBottom="@dimen/std_margin"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgItenerary"
+            android:layout_width="@dimen/itnIconW"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/titleProfile"
+            android:src="@drawable/ic_itinerary" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imgItenerary"
+            android:layout_toStartOf="@+id/imgDriver"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtLocPickUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="@string/locPickUp"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/txtLocDropOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/locDropOff"
+                android:layout_alignParentBottom="true"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="@android:color/black" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imgDriver"
+            android:layout_width="@dimen/rideIconW"
+            android:layout_height="@dimen/rideIconH"
+            android:layout_gravity="end"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/titleProfile"
+            android:src="@drawable/ic_profile"
+            app:tint="@color/colorBorder" />
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

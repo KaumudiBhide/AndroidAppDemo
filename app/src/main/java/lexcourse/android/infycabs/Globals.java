@@ -2,7 +2,7 @@ package lexcourse.android.infycabs;
 
 public class Globals {
     public static boolean isNewUser = false;
-    public static boolean isUserLoggedIn = false;
+    public static boolean isUserLoggedIn = true;
 
     // ride images
     public static final String[] RIDE_NAMES = new String[]{
@@ -12,6 +12,13 @@ public class Globals {
 
     // ride names
     public static final int[] RIDE_CARS = new int[]{
+            R.drawable.ride_luxury_car, R.drawable.ride_bmw_red,
+            R.drawable.ride_ddlj_car,
+            R.drawable.ride_bmw_white, R.drawable.ride_batmobile,
+    };
+
+    // user rides
+    public static final int[] USER_RIDES = new int[]{
             R.drawable.ride_luxury_car, R.drawable.ride_bmw_red,
             R.drawable.ride_ddlj_car,
             R.drawable.ride_bmw_white, R.drawable.ride_batmobile,
