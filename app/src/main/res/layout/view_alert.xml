@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/std_margin">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/std_margin">
+
+        <ImageView
+            android:id="@+id/imgRideBooked"
+            android:layout_width="@dimen/rideIconW"
+            android:layout_height="@dimen/rideIconW"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/titleProfile"
+            android:src="@drawable/ic_ride"
+            app:tint="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/txtMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imgRideBooked"
+            android:layout_marginStart="@dimen/std_margin"
+            android:layout_marginTop="@dimen/std_margin"
+            android:text="@string/ride_booked"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/txtMsgDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imgRideBooked"
+            android:layout_marginStart="@dimen/std_margin"
+            android:layout_marginTop="@dimen/std_margin"
+            android:text="@string/your_ride_has_been_booked"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="@android:color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtMsgDetails"
+            android:layout_alignParentEnd="true"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="@string/ok" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

@@ -74,5 +74,10 @@
     <string name="rideCRN">CRN: 5335117890</string>
     <string name="rideAmt">$10</string>
     <string name="default_ride_name">Mercedese Benz SL</string>
+    <string name="channel_name">RideBooked</string>
+    <string name="channel_desc">Channel to notify user that ride has been booked</string>
+    <string name="ride_booked">Ride Booked</string>
+    <string name="your_ride_has_been_booked">Your ride has been booked</string>
+    <string name="ok">OK</string>
 
 </resources>
