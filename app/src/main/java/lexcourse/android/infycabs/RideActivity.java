@@ -17,8 +17,9 @@ import lexcourse.android.infycabs.adapters.RideCardAdapater;
 import lexcourse.android.infycabs.data.models.RideCard;
 import lexcourse.android.infycabs.events.OnRideSelectedListener;
 import lexcourse.android.infycabs.events.RideSelectedEvent;
+import lexcourse.android.infycabs.ui.models.BaseActivity;
 
-public class RideActivity extends AppCompatActivity
+public class RideActivity extends BaseActivity
     implements OnRideSelectedListener {
 
     LinearLayout layoutTitle;

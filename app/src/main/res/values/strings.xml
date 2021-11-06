@@ -79,5 +79,6 @@
     <string name="ride_booked">Ride Booked</string>
     <string name="your_ride_has_been_booked">Your ride has been booked</string>
     <string name="ok">OK</string>
+    <string name="logout">Logout</string>
 
 </resources>

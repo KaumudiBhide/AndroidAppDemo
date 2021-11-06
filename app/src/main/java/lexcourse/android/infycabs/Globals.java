@@ -1,10 +1,29 @@
 package lexcourse.android.infycabs;
 
 import lexcourse.android.infycabs.data.models.HistoryCard;
+import lexcourse.android.infycabs.data.models.User;
 
 public class Globals {
     public static boolean isNewUser = false;
-    public static boolean isUserLoggedIn = true;
+    public static boolean isUserLoggedIn = false;
+
+    // shared preferences
+    public static String LOGGED_IN = "LoggedIn";
+    public static String USER_NAME = "UserName";
+    public static String PASSWORD = "Password";
+    public static String PHONE = "Phone";
+    public static String EMAIL = "Email";
+    public static String ADDRESS = "Address";
+
+    // current user
+    public static User rideUser;
+
+    // shared preference file
+    public static final String PREF_FILE = "InfyCabsPrefs";
+
+    // modes
+    public static final int MODE_READ = 0;
+    public static final int MODE_EDIT = 1;
 
     // ride images
     public static final String[] RIDE_NAMES = new String[]{

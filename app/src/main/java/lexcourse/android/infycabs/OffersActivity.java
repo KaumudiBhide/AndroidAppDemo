@@ -3,7 +3,9 @@ package lexcourse.android.infycabs;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class OffersActivity extends AppCompatActivity {
+import lexcourse.android.infycabs.ui.models.BaseActivity;
+
+public class OffersActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

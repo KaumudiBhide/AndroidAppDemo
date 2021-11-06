@@ -6,7 +6,7 @@ import lexcourse.android.infycabs.base.RideName;
 public class RideCard {
 
     private int rideCarImg;
-    private RideName rideName;
+    private final RideName rideName;
 
     public RideCard() {
         rideCarImg = Globals.RIDE_CARS[0];

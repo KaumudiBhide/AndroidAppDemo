@@ -14,8 +14,10 @@ import androidx.annotation.Nullable;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.textfield.TextInputLayout;
 
+import lexcourse.android.infycabs.data.models.User;
 import lexcourse.android.infycabs.events.NewUserEvent;
 import lexcourse.android.infycabs.events.OnNewUserListener;
+import lexcourse.android.infycabs.ui.models.BaseActivity;
 
 public class LoginBottomSheet extends BottomSheetDialogFragment {
 
@@ -23,6 +25,11 @@ public class LoginBottomSheet extends BottomSheetDialogFragment {
     TextView txtRegisterLink;
     View bottomSheetView;
     OnNewUserListener listener = null;
+    BaseActivity parent;
+
+    public LoginBottomSheet(BaseActivity parent) {
+        this.parent = parent;
+    }
 
     @Nullable
     @Override
@@ -62,6 +69,10 @@ public class LoginBottomSheet extends BottomSheetDialogFragment {
                 Toast.makeText(getActivity(), strCredentials,Toast.LENGTH_LONG).show();
 
                 Globals.isUserLoggedIn = true;
+                Globals.rideUser = new User();
+                Globals.rideUser.name = editUserName.getEditText().getText().toString();
+                Globals.rideUser.password = editPassword.getEditText().getText().toString();
+                parent.updatePreferences();
                 dismiss();
             }
         });

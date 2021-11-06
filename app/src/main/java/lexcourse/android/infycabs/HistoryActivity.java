@@ -14,8 +14,9 @@ import java.util.List;
 import lexcourse.android.infycabs.adapters.HistoryCardAdapater;
 import lexcourse.android.infycabs.base.RideDate;
 import lexcourse.android.infycabs.data.models.HistoryCard;
+import lexcourse.android.infycabs.ui.models.BaseActivity;
 
-public class HistoryActivity extends AppCompatActivity {
+public class HistoryActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

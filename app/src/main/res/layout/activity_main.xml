@@ -7,6 +7,15 @@
     tools:context=".MainActivity"
     android:background="@drawable/bg_home_full_with_logo5">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/std_margin"
+        android:layout_alignParentEnd="true"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:text="@string/logout" />
+
     <GridView
         android:id="@+id/gridCards"
         android:layout_width="match_parent"

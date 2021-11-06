@@ -11,8 +11,9 @@ import java.util.List;
 
 import lexcourse.android.infycabs.adapters.FlagAdapater;
 import lexcourse.android.infycabs.data.models.FlagCard;
+import lexcourse.android.infycabs.ui.models.BaseActivity;
 
-public class FlagsActivity extends AppCompatActivity {
+public class FlagsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

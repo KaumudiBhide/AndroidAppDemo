@@ -15,8 +15,8 @@ import lexcourse.android.infycabs.R;
 
 public class CardAdapater extends BaseAdapter {
 
-    private Context mContext;
-    private ArrayList<Card> mCards;
+    private final Context mContext;
+    private final ArrayList<Card> mCards;
 
     CardAdapater(Context c) {
         mContext = c;

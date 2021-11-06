@@ -19,7 +19,9 @@ import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
-public class LocationActivity extends AppCompatActivity
+import lexcourse.android.infycabs.ui.models.BaseActivity;
+
+public class LocationActivity extends BaseActivity
     implements View.OnClickListener {
 
     private static final String CHANNEL_ID = "RIDE_NOTIFICATION";
