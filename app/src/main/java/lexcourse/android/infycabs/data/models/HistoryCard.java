@@ -1,32 +1,55 @@
 package lexcourse.android.infycabs.data.models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import lexcourse.android.infycabs.Globals;
 import lexcourse.android.infycabs.R;
+import lexcourse.android.infycabs.base.RideAmount;
+import lexcourse.android.infycabs.base.RideDate;
 
 public class HistoryCard extends RideCard {
     // date & time
-    private Date date;
+    public RideDate date;
     // CRN no.
-    private String CRN;
-    private int amount;
+    public String CRN;
+    public RideAmount rideAmount;
     // pick-up & drop-off locations
-    private String strPickUpAddr;
-    private String strDropOffAddr;
+    public String strPickUpAddr;
+    public String strDropOffAddr;
     // driver details;
-    private int driverPhoto;
-    private String driverName;
+    public int driverPhoto;
+    public String driverName;
+
+    // CRN prefix
+    private static final String CRN_PREFIX = "CRN: 5335";
 
     public HistoryCard() {
         // default values
-        date = new Date();
-        amount = 10;
-        CRN = "533510908775";
+        date = new RideDate();
+        rideAmount = new RideAmount();
+        this.generateCRN();
 
-        strPickUpAddr = "Pick up address";
-        strDropOffAddr = "Drop Off address";
+        strPickUpAddr = Globals.USER_RIDES_PICK_UPS[0];
+        strDropOffAddr = Globals.USER_RIDES_DROP_OFFS[0];
 
         driverPhoto = R.drawable.driver_raj;
         driverName = "Raj";
+
+        this.setRideCarImg(Globals.RIDE_CARS[0]);
+        this.setRideName(Globals.RIDE_NAMES[0]);
+    }
+
+    public void generateCRN() {
+        long lCRN = (long) Math.floor(Math.random() * 9_000L) + 1_000L;
+        this.CRN = CRN_PREFIX + lCRN;
+    }
+
+    public String getCRN() {
+        return CRN;
+    }
+
+    public RideDate getDate() {
+        return date;
     }
 }

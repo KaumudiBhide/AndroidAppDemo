@@ -71,7 +71,8 @@
 
     <!-- Default Ride Details -->
     <string name="rideDateTime">Sat, apr 17, 01:12 PM</string>
-    <string name="rideCRN">DDLJ - CRN 5335117890</string>
+    <string name="rideCRN">CRN: 5335117890</string>
     <string name="rideAmt">$10</string>
+    <string name="default_ride_name">Mercedese Benz SL</string>
 
 </resources>

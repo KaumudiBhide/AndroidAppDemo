@@ -60,7 +60,13 @@
 
     <!-- Ride icon dimens -->
     <dimen name="rideIconW">50dp</dimen>
-    <dimen name="rideIconH">40dp</dimen>
+    <dimen name="rideIconH">30dp</dimen>
+
+    <!-- Ride name width -->
+    <dimen name="rideNameW">125dp</dimen>
+
+    <!-- History section icon dimens -->
+    <dimen name="sectionH">45dp</dimen>
 
     <!-- Flag icon dimens -->
     <dimen name="flagIconW">65dp</dimen>
