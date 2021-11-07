@@ -27,15 +27,17 @@ public class Globals {
 
     // ride images
     public static final String[] RIDE_NAMES = new String[]{
-            "Luxury Ride", "BMW Red", "MBenz SL",
-            "BMW Silver", "Batmobile",
+            /*"Luxury Ride", "BMW Red", "MBenz SL",
+            "BMW Silver", "Batmobile",*/
+            "Ride 01", "Ride 02", "Ride 03"
     };
 
     // ride names
     public static final int[] RIDE_CARS = new int[]{
-            R.drawable.ride_luxury_car, R.drawable.ride_bmw_red,
+            /*R.drawable.ride_luxury_car, R.drawable.ride_bmw_red,
             R.drawable.ride_ddlj_car,
-            R.drawable.ride_bmw_white, R.drawable.ride_batmobile,
+            R.drawable.ride_bmw_white, R.drawable.ride_batmobile,*/
+            R.drawable.ride_01, R.drawable.ride_02, R.drawable.ride_03
     };
 
     // country names

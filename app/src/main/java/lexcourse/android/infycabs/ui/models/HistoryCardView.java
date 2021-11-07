@@ -73,10 +73,10 @@ public class HistoryCardView
         this.txtLocPickUp.setText(cardData.strPickUpAddr);
         this.txtLocDropOff.setText(cardData.strDropOffAddr);
 
-        Picasso.get()
+        /*Picasso.get()
                 .load(cardData.getRideCarImg())
                 .fit()
-                .into(this.imgRideHistory);
+                .into(this.imgRideHistory);*/
 
         /*Picasso.get()
                 .load(R.drawable.ic_profile)

@@ -45,7 +45,7 @@ public class HistoryActivity extends BaseActivity {
         List<HistoryCard> list = new ArrayList<>();
         list.add(new HistoryCard());
 
-        for(int i=0; i<5; i++) {
+        for(int i=0; i<2; i++) {
             HistoryCard card = new HistoryCard();
             card.setRideCarImg(Globals.RIDE_CARS[i]);
             card.setRideName(Globals.RIDE_NAMES[i]);
