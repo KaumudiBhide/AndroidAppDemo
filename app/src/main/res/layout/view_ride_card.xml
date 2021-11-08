@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/imgH"
             android:layout_gravity="center"
-            android:src="@drawable/ride_bmw_red"
+            android:src="@drawable/sedan_grey"
             android:contentDescription="@string/select_ride" />
 
         <TextView
