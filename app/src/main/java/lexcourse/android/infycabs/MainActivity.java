@@ -128,8 +128,8 @@ public class MainActivity extends BaseActivity
             startActivity(intent);
         }
         else if(view.getId() == R.id.btnLogout) {
-            // clear prefernces
-            clearPreferences();
+            // delete preferences
+            deletePreferences();
             // clear global user data
             Globals.rideUser.clearProfile();
 

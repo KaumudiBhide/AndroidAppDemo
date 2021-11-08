@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -23,11 +24,15 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void clearPreferences() {
-        /*SharedPreferences preferences = getSharedPreferences(Context.MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences(
+                Globals.PREF_FILE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.clear();
         editor.apply();
-        editor.commit();*/
+        editor.commit();
+    }
+
+    public void deletePreferences() {
         getBaseContext().deleteSharedPreferences(
                 Globals.PREF_FILE);
     }
