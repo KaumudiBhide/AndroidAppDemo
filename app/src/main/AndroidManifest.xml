@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="lexcourse.android.infycabs">
+    package="lexcourse.android.bookcab">
 
     <application
         android:allowBackup="true"
@@ -9,44 +9,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.models.BaseActivity"></activity>
-        <activity android:name=".FlagsActivity" />
-        <activity android:name=".LocationActivity">
+        <activity android:name="lexcourse.android.bookcab.ui.models.BaseActivity"></activity>
+        <activity android:name="lexcourse.android.bookcab.FlagsActivity" />
+        <activity android:name="lexcourse.android.bookcab.LocationActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.infycabs.RideActivity" />
+                android:value="lexcourse.android.bookcab.RideActivity" />
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="lexcourse.android.bookcab.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OffersActivity">
+        <activity android:name="lexcourse.android.bookcab.OffersActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.infycabs.MainActivity" />
+                android:value="lexcourse.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name=".ProfileActivity">
+        <activity android:name="lexcourse.android.bookcab.ProfileActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.infycabs.MainActivity" />
+                android:value="lexcourse.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name=".RideActivity">
+        <activity android:name="lexcourse.android.bookcab.RideActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.infycabs.MainActivity" />
+                android:value="lexcourse.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name=".HistoryActivity">
+        <activity android:name="lexcourse.android.bookcab.HistoryActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.infycabs.MainActivity" />
+                android:value="lexcourse.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name=".RegisterActivity">
+        <activity android:name="lexcourse.android.bookcab.RegisterActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.infycabs.MainActivity" />
+                android:value="lexcourse.android.bookcab.MainActivity" />
         </activity>
     </application>
 

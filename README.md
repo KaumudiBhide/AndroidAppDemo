@@ -1,2 +1,2 @@
-# InfyCabs
-InfyCabs project for Lex Android Course
+# BookCab
+BookCab project for Android App Demo
