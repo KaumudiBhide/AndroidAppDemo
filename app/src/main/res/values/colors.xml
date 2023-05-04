@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4898EB</color>
-    <color name="colorPrimaryDark">#265684</color>
-    <color name="colorAccent">#6CA8C0</color>
+    <color name="colorPrimary">#8BB55B</color>
+    <color name="colorPrimaryDark">#3A3E42</color>
+    <color name="colorAccent">#F49678</color>
 
     <!-- On surface colors -->
     <color name="colorOnSurface">#FFFFFF</color>
 
     <!-- light text color -->
-    <color name="colorTitle">#7A9EC7</color>
+    <color name="colorTitle">#89A865</color>
 
     <!-- divider color -->
     <color name="colorDivider">#ECECEC</color>
