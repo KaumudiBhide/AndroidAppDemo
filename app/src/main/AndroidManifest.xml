@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="lexcourse.android.bookcab">
+    package="demoapps.android.bookcab">
 
     <application
         android:allowBackup="true"
@@ -9,44 +9,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="lexcourse.android.bookcab.ui.models.BaseActivity"></activity>
-        <activity android:name="lexcourse.android.bookcab.FlagsActivity" />
-        <activity android:name="lexcourse.android.bookcab.LocationActivity">
+        <activity android:name="demoapps.android.bookcab.ui.models.BaseActivity"></activity>
+        <activity android:name="demoapps.android.bookcab.FlagsActivity" />
+        <activity android:name="demoapps.android.bookcab.LocationActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.bookcab.RideActivity" />
+                android:value="demoapps.android.bookcab.RideActivity" />
         </activity>
-        <activity android:name="lexcourse.android.bookcab.MainActivity">
+        <activity android:name="demoapps.android.bookcab.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="lexcourse.android.bookcab.OffersActivity">
+        <activity android:name="demoapps.android.bookcab.OffersActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.bookcab.MainActivity" />
+                android:value="demoapps.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name="lexcourse.android.bookcab.ProfileActivity">
+        <activity android:name="demoapps.android.bookcab.ProfileActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.bookcab.MainActivity" />
+                android:value="demoapps.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name="lexcourse.android.bookcab.RideActivity">
+        <activity android:name="demoapps.android.bookcab.RideActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.bookcab.MainActivity" />
+                android:value="demoapps.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name="lexcourse.android.bookcab.HistoryActivity">
+        <activity android:name="demoapps.android.bookcab.HistoryActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.bookcab.MainActivity" />
+                android:value="demoapps.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name="lexcourse.android.bookcab.RegisterActivity">
+        <activity android:name="demoapps.android.bookcab.RegisterActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="lexcourse.android.bookcab.MainActivity" />
+                android:value="demoapps.android.bookcab.MainActivity" />
         </activity>
     </application>
 
