@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<demoapps.android.collections.GmCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="@dimen/cardview_width"
+    card_view:cardElevation="@dimen/eleavation"
+    card_view:cardCornerRadius="@dimen/cornerRadius"
+    android:layout_height="@dimen/cardview_height">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/cardBack"
+            android:src="@drawable/card_back"
+            android:contentDescription="@string/app_name"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:id="@+id/cardFront"
+            android:layout_margin="@dimen/std_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/cardTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/rankTxt"
+                    android:layout_width="@dimen/cardTxt_width"
+                    android:layout_height="@dimen/cardTxt_height"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:textAlignment="viewStart"
+                    android:text="@string/defaultRank"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+                <ImageView
+                    android:id="@+id/smallIcon"
+                    android:layout_width="@dimen/smIcon_width"
+                    android:layout_height="@dimen/smIcon_height"
+                    android:contentDescription="@string/app_name"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/club" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/blancksp"
+                android:layout_width="@dimen/blank_width"
+                android:layout_height="@dimen/blank_height"
+                android:contentDescription="@string/app_name"
+                android:layout_below="@+id/cardTop"/>
+
+            <ImageView
+                android:id="@+id/bigIcon"
+                android:layout_width="@dimen/bigIcon_width"
+                android:layout_height="@dimen/bigIcon_height"
+                android:layout_below="@+id/blancksp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/std_margin"
+                android:src="@drawable/club"
+                android:contentDescription="@string/app_name" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</demoapps.android.collections.GmCardView>

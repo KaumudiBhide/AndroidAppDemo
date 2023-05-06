@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="demoapps.android.collections.CollectionActivity">
 
-   <!-- <include
+   <include
         android:id="@+id/deckView"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
@@ -22,14 +22,14 @@
         android:layout_centerInParent="true"
         android:numColumns="4"
         android:layout_margin="@dimen/grid_margin"
-        android:layout_below="@id/deckView"/> -->
+        android:layout_below="@id/deckView"/>
 
     <RelativeLayout
         android:id="@+id/buttonBar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tripleDeckGrid"
         >
-        <!-- android:layout_below="@+id/tripleDeckGrid" -->
 
         <Button
             android:id="@+id/btnRankSort"

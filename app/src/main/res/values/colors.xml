@@ -15,4 +15,15 @@
     <color name="colorBorder">#A8A8A9</color>
     <color name="colorInactive">#AEADAD</color>
 
+    <!-- for Collection Demo -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#0f0f0f</color>
+    <color name="darkGrey">#6c6c6c</color>
+    <color name="grey">#abadaa</color>
+    <color name="steel">#d6d6d5</color>
+
+    <color name="red">#df0b03</color>
+    <color name="beidge">#bd945a</color>
+    <color name="darkViolet">#684250</color>
+
 </resources>

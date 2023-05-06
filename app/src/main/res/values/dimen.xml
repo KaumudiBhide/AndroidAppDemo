@@ -75,4 +75,38 @@
     <!-- Itinerary icon dimens -->
     <dimen name="itnIconW">35dp</dimen>
 
+    <!-- Card view : single card -->
+    <dimen name="cardview_width">50dp</dimen>
+    <dimen name="cardview_height">75dp</dimen>
+    <dimen name="eleavation">5dp</dimen>
+    <dimen name="cornerRadius">5dp</dimen>
+
+    <!-- Card Deck  -->
+    <dimen name="deckview_width">60dp</dimen>
+    <dimen name="deckview_height">90dp</dimen>
+
+    <!-- Small Icon -->
+    <dimen name="smIcon_width">12dp</dimen>
+    <dimen name="smIcon_height">15dp</dimen>
+
+    <!-- Card Text -->
+    <dimen name="cardTxt_width">24dp</dimen>
+    <dimen name="cardTxt_height">15dp</dimen>
+
+    <!-- Big Icon -->
+    <dimen name="bigIcon_width">35dp</dimen>
+    <dimen name="bigIcon_height">35dp</dimen>
+
+    <!-- Standard dimens for ImageView -->
+    <dimen name="blank_width">35dp</dimen>
+    <dimen name="blank_height">7dp</dimen>
+
+    <!-- Gridview -->
+    <dimen name="grid_height">300dp</dimen>
+    <dimen name="grid_margin">15dp</dimen>
+
+    <!-- Triple Open Deck  -->
+    <dimen name="tripleDeck_width">120dp</dimen>
+    <dimen name="tripleDeck_height">90dp</dimen>
+
 </resources>

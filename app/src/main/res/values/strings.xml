@@ -81,4 +81,7 @@
     <string name="ok">OK</string>
     <string name="logout">Logout</string>
 
+    <!-- Default card rank : Queen -->
+    <string name="defaultRank">Q</string>
+
 </resources>
