@@ -11,12 +11,12 @@ import java.util.LinkedList;
 
 import demoapps.android.bookcab.R;
 
-public class DeckView extends CardView {
+public class DeckView extends CardView implements View.OnClickListener {
 
     private LinkedList<GmCard> mSuitDeck;
     private GmCardView mGmCardView;
     private boolean mEndofDeck, mIsOpenView;
-    //private CardPlayedListener mCardPlayedListener;
+    private CardPlayedListener mCardPlayedListener;
 
     public DeckView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -38,7 +38,7 @@ public class DeckView extends CardView {
         mGmCardView = (GmCardView) findViewById(R.id.deckCard);
         mGmCardView.setUI();
         mGmCardView.setVisibility(INVISIBLE);
-        //mGmCardView.setOnClickListener(this::onClick);
+        mGmCardView.setOnClickListener(this);
     }
 
     private void fillSuitDeck() {
@@ -94,7 +94,7 @@ public class DeckView extends CardView {
         return nextCard;
     }
 
-    private void onClick(View v) {
+    public void onClick(View v) {
         if(!mEndofDeck) {
             GmCard curCard = nextCard();
             if (curCard != null)
@@ -111,14 +111,14 @@ public class DeckView extends CardView {
     }
 
     public void fireCardPlayedEvent(GmCard gmCard) {
-       /* CardPlayedEvent event = new CardPlayedEvent(gmCard);
+        CardPlayedEvent event = new CardPlayedEvent(gmCard);
         if(mCardPlayedListener!=null)
-            mCardPlayedListener.onCardPlayed(event);*/
+            mCardPlayedListener.onCardPlayed(event);
     }
 
-    /*public void setCardPlayedListener(CardPlayedListener listener) {
+    public void setCardPlayedListener(CardPlayedListener listener) {
         mCardPlayedListener = listener;
-    }*/
+    }
 
     public LinkedList<GmCard> getDeck() { return mSuitDeck; }
 }

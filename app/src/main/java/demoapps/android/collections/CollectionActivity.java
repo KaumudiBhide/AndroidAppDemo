@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import java.util.Collections;
@@ -13,7 +14,14 @@ import java.util.LinkedList;
 
 import demoapps.android.bookcab.R;
 
-public class CollectionActivity extends AppCompatActivity {
+public class CollectionActivity extends AppCompatActivity
+        implements CardAddedListener, CardPlayedListener,
+        AdapterView.OnItemClickListener {
+
+    private DeckView mCardDeck;
+    private LinkedList<GmCard> mSuitOpen;
+    private GridView mGridView;
+    private TripleDeckAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +30,21 @@ public class CollectionActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Java Collection Demo");
+        init();
+    }
+
+    private void init() {
+        mSuitOpen = new LinkedList<GmCard>();
+
+        mCardDeck = findViewById(R.id.deckView);
+        mCardDeck.init(Constants.OPEN_VIEW);
+        mCardDeck.setCardPlayedListener(this);
+
+        mGridView = findViewById(R.id.tripleDeckGrid);
+        mAdapter = new TripleDeckAdapter(getBaseContext(),
+                mSuitOpen);
+        mGridView.setAdapter(mAdapter);
+        mGridView.setOnItemClickListener(this);
     }
 
     public void onRestart(View v) {
@@ -99,23 +122,23 @@ public class CollectionActivity extends AppCompatActivity {
         shoToast("onSwap");
     }
 
-    public void onCardPlayed(/*CardPlayedEvent e*/) {
-        /*GmCard curCard = e.getPlayedCard();
+    public void onCardPlayed(CardPlayedEvent e) {
+        GmCard curCard = e.getPlayedCard();
         CardAddedEvent event = new CardAddedEvent(curCard);
-        onCardAdded(event);*/
+        onCardAdded(event);
     }
 
-    public void onCardAdded(/*CardAddedEvent e*/) {
-        /*GmCard curCard = e.getAddedCard();
+    public void onCardAdded(CardAddedEvent e) {
+        GmCard curCard = e.getAddedCard();
         mSuitOpen.offerFirst(curCard);
-        mAdapter.notifyDataSetChanged();*/
+        mAdapter.notifyDataSetChanged();
     }
 
     public void onItemClick
             (AdapterView<?> parent, View view,
              int position, long id) {
-        //GmCard g = mSuitOpen.remove(position);
-        //mAdapter.notifyDataSetChanged();
+        GmCard g = mSuitOpen.remove(position);
+        mAdapter.notifyDataSetChanged();
     }
 
     private void shoToast(String message) {

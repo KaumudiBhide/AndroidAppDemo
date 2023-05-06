@@ -32,7 +32,7 @@ public class GmCardView extends CardView {
         mIsBackSide = false;
         mCardBack = (ImageView) findViewById(R.id.cardBack);
         // black card design
-        //mCardBack.setImageResource(R.drawable.card_back);
+        mCardBack.setImageResource(R.drawable.card_back);
         mCardBack.setImageResource(R.drawable.card_back_black);
         mCardBack.setVisibility(INVISIBLE);
 
