@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="demoapps.android.collections.CollectionActivity">
+
+   <!-- <include
+        android:id="@+id/deckView"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="@dimen/deckview_width"
+        android:layout_height="@dimen/deckview_height"
+        android:layout_margin="@dimen/std_margin"
+        layout="@layout/view_card_deck" />
+
+    <GridView
+        android:id="@+id/tripleDeckGrid"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/grid_height"
+        android:layout_centerInParent="true"
+        android:numColumns="4"
+        android:layout_margin="@dimen/grid_margin"
+        android:layout_below="@id/deckView"/> -->
+
+    <RelativeLayout
+        android:id="@+id/buttonBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <!-- android:layout_below="@+id/tripleDeckGrid" -->
+
+        <Button
+            android:id="@+id/btnRankSort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginHorizontal="@dimen/sm_margin"
+            android:layout_marginTop="@dimen/std_margin"
+            android:onClick="onRankSort"
+            android:text="Sort Rank"/>
+
+        <Button
+            android:id="@+id/btnColorSort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_toEndOf="@id/btnRankSort"
+            android:layout_marginHorizontal="@dimen/sm_margin"
+            android:layout_marginTop="@dimen/std_margin"
+            android:onClick="onColorSort"
+            android:text="Sort Color"/>
+
+        <Button
+            android:id="@+id/btnSuitSort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_toEndOf="@id/btnColorSort"
+            android:layout_marginHorizontal="@dimen/sm_margin"
+            android:layout_marginTop="@dimen/std_margin"
+            android:onClick="onSuitSort"
+            android:text="Sort Suit"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttonBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonBar1">
+
+        <Button
+            android:id="@+id/btnPick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/std_margin"
+            android:layout_marginHorizontal="@dimen/sm_margin"
+            android:onClick="onPick"
+            android:text="Pick"/>
+
+        <Button
+            android:id="@+id/btnMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="@dimen/sm_margin"
+            android:layout_toEndOf="@id/btnPick"
+            android:layout_marginTop="@dimen/std_margin"
+            android:onClick="onMax"
+            android:text="Max"/>
+
+        <Button
+            android:id="@+id/btnSwap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="@dimen/sm_margin"
+            android:layout_toEndOf="@id/btnMax"
+            android:layout_marginTop="@dimen/std_margin"
+            android:onClick="onSwap"
+            android:text="Swap"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttonBar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonBar2">
+
+        <Button
+            android:id="@+id/btnRestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/std_margin"
+            android:layout_marginHorizontal="@dimen/sm_margin"
+            android:onClick="onRestart"
+            android:text="Restart"/>
+
+        <Button
+            android:id="@+id/btnAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/btnRestart"
+            android:layout_marginTop="@dimen/std_margin"
+            android:layout_marginHorizontal="@dimen/sm_margin"
+            android:onClick="onAll"
+            android:text="All"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

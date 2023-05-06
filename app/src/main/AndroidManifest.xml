@@ -9,41 +9,47 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="demoapps.android.bookcab.ui.models.BaseActivity"></activity>
-        <activity android:name="demoapps.android.bookcab.FlagsActivity" />
-        <activity android:name="demoapps.android.bookcab.LocationActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="demoapps.android.bookcab.RideActivity" />
-        </activity>
-        <activity android:name="demoapps.android.bookcab.MainActivity">
+        <activity android:name="demoapps.android.collections.CollectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="demoapps.android.bookcab.OffersActivity">
+        <activity android:name=".ui.models.BaseActivity" />
+        <activity android:name=".FlagsActivity" />
+        <activity android:name=".LocationActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="demoapps.android.bookcab.RideActivity" />
+        </activity>
+        <!-- <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> -->
+        <activity android:name=".OffersActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="demoapps.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name="demoapps.android.bookcab.ProfileActivity">
+        <activity android:name=".ProfileActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="demoapps.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name="demoapps.android.bookcab.RideActivity">
+        <activity android:name=".RideActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="demoapps.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name="demoapps.android.bookcab.HistoryActivity">
+        <activity android:name=".HistoryActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="demoapps.android.bookcab.MainActivity" />
         </activity>
-        <activity android:name="demoapps.android.bookcab.RegisterActivity">
+        <activity android:name=".RegisterActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="demoapps.android.bookcab.MainActivity" />
