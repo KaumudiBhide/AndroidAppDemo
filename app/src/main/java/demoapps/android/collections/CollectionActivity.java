@@ -48,42 +48,42 @@ public class CollectionActivity extends AppCompatActivity
     }
 
     public void onRestart(View v) {
-        /*mCardDeck.refillDeck();
+        mCardDeck.refillDeck();
         mSuitOpen.clear();
-        mAdapter.notifyDataSetChanged();*/
-        shoToast("onRestart");
+        mAdapter.notifyDataSetChanged();
+        shoToast("Restart the Deck");
     }
 
     public void onRankSort(View v) {
-        /*Collections.sort(mSuitOpen, new CardRankComparator());
-        mAdapter.notifyDataSetChanged();*/
-        shoToast("onRankSort");
+        Collections.sort(mSuitOpen, new CardRankComparator());
+        mAdapter.notifyDataSetChanged();
+        shoToast("Sort cards by Rank: Ace to King");
     }
 
     public void onColorSort(View v) {
-        /*Collections.sort(mSuitOpen, new CardColorComparator());
-        mAdapter.notifyDataSetChanged();*/
-        shoToast("onColorSort");
+        Collections.sort(mSuitOpen, new CardColorComparator());
+        mAdapter.notifyDataSetChanged();
+        shoToast("Sort cards by Color: Black, Red");
     }
 
     public void onSuitSort(View v) {
-        /*Collections.sort(mSuitOpen, new CardSuitComparator());
-        mAdapter.notifyDataSetChanged();*/
-        shoToast("onSuitSort");
+        Collections.sort(mSuitOpen, new CardSuitComparator());
+        mAdapter.notifyDataSetChanged();
+        shoToast("Sort cards by Suit: Club, Diamond, Heart, Spade");
     }
 
     public void onAll(View v) {
         // get full deck
-        //LinkedList<GmCard> cards = mCardDeck.getDeck();
+        LinkedList<GmCard> cards = mCardDeck.getDeck();
         // add all
-        /*mSuitOpen.addAll(cards);
-        mAdapter.notifyDataSetChanged();*/
-        shoToast("onAll");
+        mSuitOpen.addAll(cards);
+        mAdapter.notifyDataSetChanged();
+        shoToast("Display all cards in the Deck");
     }
 
     public void onPick(View v) {
         // pick one card
-        /*CardSuit suit1 = new CardSuit(Constants.DIAMOND);
+        CardSuit suit1 = new CardSuit(Constants.DIAMOND);
         GmCard card1 = new GmCard(Constants.ACE, suit1);
 
         int index = Collections.binarySearch(
@@ -102,24 +102,24 @@ public class CollectionActivity extends AppCompatActivity
         }
 
         // refresh adapter view
-        mAdapter.notifyDataSetChanged();*/
-        shoToast("onPick");
+        mAdapter.notifyDataSetChanged();
+        shoToast("Pick the first card OR pick Ace of Heart");
     }
 
     public void onMax(View v) {
         // max
-        /*GmCard g = Collections.max(mSuitOpen, new CardSuitComparator());
+        GmCard g = Collections.max(mSuitOpen, new CardSuitComparator());
         mSuitOpen.add(g);
-        mAdapter.notifyDataSetChanged();*/
-        shoToast("onMax");
+        mAdapter.notifyDataSetChanged();
+        shoToast("Show the Card with Max Suit and Rank: Club, Diamond, Heart, Spade");
     }
 
     public void onSwap(View v) {
-        /*int last = mSuitOpen.size();
+        int last = mSuitOpen.size();
         // swap two cards
         Collections.swap(mSuitOpen, 0, (last-1));
-        mAdapter.notifyDataSetChanged();*/
-        shoToast("onSwap");
+        mAdapter.notifyDataSetChanged();
+        shoToast("Swap the First and Last Card");
     }
 
     public void onCardPlayed(CardPlayedEvent e) {

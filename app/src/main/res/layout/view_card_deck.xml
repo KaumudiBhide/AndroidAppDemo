@@ -10,10 +10,10 @@
 
     <include
         android:id="@+id/deckCard"
-        android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:layout_width="@dimen/cardview_width"
         android:layout_height="@dimen/cardview_height"
-        android:layout_margin="@dimen/std_margin"
+        android:layout_margin="@dimen/sm_margin"
         layout="@layout/view_gm_card" />
 
 </demoapps.android.collections.DeckView>
