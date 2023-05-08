@@ -28,8 +28,7 @@
         android:id="@+id/buttonBar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tripleDeckGrid"
-        >
+        android:layout_below="@+id/tripleDeckGrid">
 
         <Button
             android:id="@+id/btnRankSort"
@@ -134,5 +133,24 @@
             android:text="All"/>
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonBar3"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtDesc"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/descH"
+            android:layout_margin="@dimen/std_margin"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:text="Description"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

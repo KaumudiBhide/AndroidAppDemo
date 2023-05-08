@@ -109,4 +109,7 @@
     <dimen name="tripleDeck_width">120dp</dimen>
     <dimen name="tripleDeck_height">90dp</dimen>
 
+    <!-- Description Text height -->
+    <dimen name="descH">100dp</dimen>
+
 </resources>

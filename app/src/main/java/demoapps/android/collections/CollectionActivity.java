@@ -4,10 +4,13 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
+
+import com.google.android.material.textview.MaterialTextView;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -22,6 +25,8 @@ public class CollectionActivity extends AppCompatActivity
     private LinkedList<GmCard> mSuitOpen;
     private GridView mGridView;
     private TripleDeckAdapter mAdapter;
+    private MaterialTextView mDescTxtView;
+    private Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,30 +50,38 @@ public class CollectionActivity extends AppCompatActivity
                 mSuitOpen);
         mGridView.setAdapter(mAdapter);
         mGridView.setOnItemClickListener(this);
+
+        mDescTxtView = findViewById(R.id.txtDesc);
+        mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
+        mToast.setGravity(Gravity.CENTER, 0, 0);
     }
 
     public void onRestart(View v) {
         mCardDeck.refillDeck();
         mSuitOpen.clear();
         mAdapter.notifyDataSetChanged();
+        mDescTxtView.setText("Uses Collection method: clear()");
         shoToast("Restart the Deck");
     }
 
     public void onRankSort(View v) {
         Collections.sort(mSuitOpen, new CardRankComparator());
         mAdapter.notifyDataSetChanged();
+        mDescTxtView.setText("Uses Collection method: sort()\nWith Custom Comparator class: CardRankComparator");
         shoToast("Sort cards by Rank: Ace to King");
     }
 
     public void onColorSort(View v) {
         Collections.sort(mSuitOpen, new CardColorComparator());
         mAdapter.notifyDataSetChanged();
+        mDescTxtView.setText("Uses Collection method: sort()\nWith Custom Comparator class: CardColorComparator");
         shoToast("Sort cards by Color: Black, Red");
     }
 
     public void onSuitSort(View v) {
         Collections.sort(mSuitOpen, new CardSuitComparator());
         mAdapter.notifyDataSetChanged();
+        mDescTxtView.setText("Uses Collection method: sort()\nWith Custom Comparator class: CardSuitComparator");
         shoToast("Sort cards by Suit: Club, Diamond, Heart, Spade");
     }
 
@@ -78,6 +91,7 @@ public class CollectionActivity extends AppCompatActivity
         // add all
         mSuitOpen.addAll(cards);
         mAdapter.notifyDataSetChanged();
+        mDescTxtView.setText("Uses Collection method: addAll()");
         shoToast("Display all cards in the Deck");
     }
 
@@ -111,6 +125,7 @@ public class CollectionActivity extends AppCompatActivity
         GmCard g = Collections.max(mSuitOpen, new CardSuitComparator());
         mSuitOpen.add(g);
         mAdapter.notifyDataSetChanged();
+        mDescTxtView.setText("Uses Collection method: max()\nWith Custom Comparator class: CardSuitComparator");
         shoToast("Show the Card with Max Suit and Rank: Club, Diamond, Heart, Spade");
     }
 
@@ -119,6 +134,7 @@ public class CollectionActivity extends AppCompatActivity
         // swap two cards
         Collections.swap(mSuitOpen, 0, (last-1));
         mAdapter.notifyDataSetChanged();
+        mDescTxtView.setText("Uses Collection method: swap()");
         shoToast("Swap the First and Last Card");
     }
 
@@ -142,6 +158,7 @@ public class CollectionActivity extends AppCompatActivity
     }
 
     private void shoToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        mToast.setText(message);
+        mToast.show();
     }
 }
