@@ -3,6 +3,7 @@ package demoapps.android.collections;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -60,29 +61,35 @@ public class CollectionActivity extends AppCompatActivity
         mCardDeck.refillDeck();
         mSuitOpen.clear();
         mAdapter.notifyDataSetChanged();
-        mDescTxtView.setText("Uses Collection method: clear()");
-        shoToast("Restart the Deck");
+        mDescTxtView.setText("Uses Collection method: clear() for open cards\nUses Collection method: shuffle() for cards in the Deck");
+        showToast("Restart the Deck");
     }
 
     public void onRankSort(View v) {
+        if(!validateOpenSuit())
+            return;
         Collections.sort(mSuitOpen, new CardRankComparator());
         mAdapter.notifyDataSetChanged();
         mDescTxtView.setText("Uses Collection method: sort()\nWith Custom Comparator class: CardRankComparator");
-        shoToast("Sort cards by Rank: Ace to King");
+        showToast("Sort cards by Rank: Ace to King");
     }
 
     public void onColorSort(View v) {
+        if(!validateOpenSuit())
+            return;
         Collections.sort(mSuitOpen, new CardColorComparator());
         mAdapter.notifyDataSetChanged();
         mDescTxtView.setText("Uses Collection method: sort()\nWith Custom Comparator class: CardColorComparator");
-        shoToast("Sort cards by Color: Black, Red");
+        showToast("Sort cards by Color: Black, Red");
     }
 
     public void onSuitSort(View v) {
+        if(!validateOpenSuit())
+            return;
         Collections.sort(mSuitOpen, new CardSuitComparator());
         mAdapter.notifyDataSetChanged();
         mDescTxtView.setText("Uses Collection method: sort()\nWith Custom Comparator class: CardSuitComparator");
-        shoToast("Sort cards by Suit: Club, Diamond, Heart, Spade");
+        showToast("Sort cards by Suit: Club, Diamond, Heart, Spade");
     }
 
     public void onAll(View v) {
@@ -92,7 +99,7 @@ public class CollectionActivity extends AppCompatActivity
         mSuitOpen.addAll(cards);
         mAdapter.notifyDataSetChanged();
         mDescTxtView.setText("Uses Collection method: addAll()");
-        shoToast("Display all cards in the Deck");
+        showToast("Display all cards in the Deck");
     }
 
     public void onPick(View v) {
@@ -117,7 +124,8 @@ public class CollectionActivity extends AppCompatActivity
 
         // refresh adapter view
         mAdapter.notifyDataSetChanged();
-        shoToast("Pick the first card OR pick Ace of Heart");
+        mDescTxtView.setText("");
+        showToast("Pick the first card OR pick Ace of Heart");
     }
 
     public void onMax(View v) {
@@ -126,7 +134,7 @@ public class CollectionActivity extends AppCompatActivity
         mSuitOpen.add(g);
         mAdapter.notifyDataSetChanged();
         mDescTxtView.setText("Uses Collection method: max()\nWith Custom Comparator class: CardSuitComparator");
-        shoToast("Show the Card with Max Suit and Rank: Club, Diamond, Heart, Spade");
+        showToast("Show the Card with Max Suit and Rank: Club, Diamond, Heart, Spade");
     }
 
     public void onSwap(View v) {
@@ -135,7 +143,7 @@ public class CollectionActivity extends AppCompatActivity
         Collections.swap(mSuitOpen, 0, (last-1));
         mAdapter.notifyDataSetChanged();
         mDescTxtView.setText("Uses Collection method: swap()");
-        shoToast("Swap the First and Last Card");
+        showToast("Swap the First and Last Card");
     }
 
     public void onCardPlayed(CardPlayedEvent e) {
@@ -157,8 +165,26 @@ public class CollectionActivity extends AppCompatActivity
         mAdapter.notifyDataSetChanged();
     }
 
-    private void shoToast(String message) {
+    private void showToast(String message) {
         mToast.setText(message);
+        View view = mToast.getView();
+        view.setBackgroundColor(Color.YELLOW);
+        mToast.setView(view);
         mToast.show();
+    }
+
+    private boolean validateOpenSuit() {
+        String strMsg = null;
+        if(mSuitOpen.size()>1)
+            return true;
+        else if(mSuitOpen.size()==0) {
+            strMsg = "No cards to sort! Click on the card in the Deck...";
+        }
+        else {
+            strMsg = "Too few cards to sort! Click on the card in the Deck...";
+        }
+        mDescTxtView.setText(strMsg);
+        showToast(strMsg);
+        return false;
     }
 }

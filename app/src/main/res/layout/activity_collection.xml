@@ -148,7 +148,8 @@
             android:layout_margin="@dimen/std_margin"
             android:textColor="@color/colorAccent"
             android:textStyle="bold"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textAllCaps="false"
+            android:textSize="@dimen/defaultTxtSize"
             android:text="Description"/>
 
     </LinearLayout>

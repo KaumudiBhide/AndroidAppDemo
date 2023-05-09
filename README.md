@@ -8,7 +8,7 @@ BookCab project - BookCab demonstrates a sample app created to book a cab ride.
 
 # CollectionActivity project
 CollectionActivity project - CollectionActivity demonstrates a sample implementation of Java Collections API 
-using deck of cards as thhe Graphic Interface.
+using deck of cards as the Graphic Interface.
 ### Starting screen - CollectionActivty
 ### Package - collections 
 

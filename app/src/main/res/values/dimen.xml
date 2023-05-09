@@ -112,4 +112,7 @@
     <!-- Description Text height -->
     <dimen name="descH">100dp</dimen>
 
+    <!-- Default Text size -->
+    <dimen name="defaultTxtSize">20sp</dimen>
+
 </resources>
